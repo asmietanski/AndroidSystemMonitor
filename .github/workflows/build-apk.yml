@@ -21,9 +21,9 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         
-    - name: Fix gradlew line endings
+    - name: Setup Gradle Wrapper
       run: |
-        sed -i 's/\r$//' gradlew
+        gradle wrapper --gradle-version 8.0
         chmod +x gradlew
       
     - name: Build Debug APK
