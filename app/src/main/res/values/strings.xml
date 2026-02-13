@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">System Monitor</string>
+    <string name="refresh">Refresh</string>
+    <string name="total_apps">Total Apps: %d</string>
+    <string name="running_apps">Running: %d</string>
+    <string name="memory_usage">Memory: %s</string>
+    <string name="cpu_usage">CPU: %s</string>
+    <string name="running">Running</string>
+    <string name="stopped">Stopped</string>
+    <string name="app_icon">App Icon</string>
+</resources>

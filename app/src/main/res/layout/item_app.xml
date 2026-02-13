@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/appIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="App Icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/appName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/runningStatus"
+            app:layout_constraintStart_toEndOf="@id/appIcon"
+            app:layout_constraintTop_toTopOf="@id/appIcon"
+            tools:text="System Monitor" />
+
+        <TextView
+            android:id="@+id/packageName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@id/appName"
+            app:layout_constraintStart_toStartOf="@id/appName"
+            app:layout_constraintTop_toBottomOf="@id/appName"
+            tools:text="com.example.systemmonitor" />
+
+        <TextView
+            android:id="@+id/runningStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/appName"
+            tools:text="Running"
+            tools:textColor="@android:color/holo_green_dark" />
+
+        <LinearLayout
+            android:id="@+id/statsLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/appName"
+            app:layout_constraintTop_toBottomOf="@id/packageName">
+
+            <TextView
+                android:id="@+id/memoryUsage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="4dp"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="14sp"
+                app:drawableStartCompat="@android:drawable/ic_menu_info_details"
+                app:drawableTint="@android:color/holo_blue_dark"
+                tools:text="Memory: 45.23 MB" />
+
+            <TextView
+                android:id="@+id/cpuUsage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="4dp"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="14sp"
+                app:drawableStartCompat="@android:drawable/ic_menu_info_details"
+                app:drawableTint="@android:color/holo_orange_dark"
+                tools:text="CPU: 12.5%" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
