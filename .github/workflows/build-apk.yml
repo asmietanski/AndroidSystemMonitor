@@ -21,8 +21,10 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
+    - name: Fix gradlew line endings
+      run: |
+        sed -i 's/\r$//' gradlew
+        chmod +x gradlew
       
     - name: Build Debug APK
       run: ./gradlew assembleDebug --stacktrace --no-daemon --no-build-cache
